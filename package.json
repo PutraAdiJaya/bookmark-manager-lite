@@ -1,0 +1,134 @@
+{
+  "name": "bookmark-manager-lite",
+  "displayName": "bookmark-manager-lite",
+  "description": "A lightweight bookmark manager extension for Visual Studio Code",
+  "version": "0.0.1",
+  "icon": "resources/icon.png",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wijayaac/bookmark-manager-lite.git"
+  },
+  "engines": {
+    "vscode": "^1.104.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "views": {
+      "explorer": [
+        {
+          "id": "bookmarkExplorer",
+          "name": "Bookmark Putra"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "bookmarkLite.add",
+        "title": "Bookmark.Putra: Add Bookmark",
+        "category": "Bookmark"
+      },
+      {
+        "command": "bookmarkLite.addWithTags",
+        "title": "Bookmark.Putra: Add Bookmark with Tags",
+        "category": "Bookmark"
+      },
+      {
+        "command": "bookmarkLite.open",
+        "title": "Bookmark.Putra: Open Bookmark",
+        "category": "Bookmark"
+      },
+      {
+        "command": "bookmarkLite.remove",
+        "title": "Bookmark.Putra: Remove Bookmark",
+        "category": "Bookmark"
+      },
+      {
+        "command": "bookmarkLite.editTags",
+        "title": "Bookmark.Putra: Edit Bookmark Tags",
+        "category": "Bookmark"
+      },
+      {
+        "command": "bookmarkLite.clearAll",
+        "title": "Bookmark.Putra: Clear All Bookmarks",
+        "category": "Bookmark"
+      },
+      {
+        "command": "bookmarkLite.collapseAll",
+        "title": "Bookmark.Putra: Collapse All Groups",
+        "category": "Bookmark"
+      },
+      {
+        "command": "bookmarkLite.expandAll",
+        "title": "Bookmark.Putra: Expand All Groups",
+        "category": "Bookmark"
+      }
+    ],
+    "menus": {
+      "view/item/context": [
+        {
+          "command": "bookmarkLite.open",
+          "when": "view == bookmarkExplorer && viewItem == bookmark",
+          "group": "navigation"
+        },
+        {
+          "command": "bookmarkLite.editTags",
+          "when": "view == bookmarkExplorer && viewItem == bookmark",
+          "group": "edit"
+        },
+        {
+          "command": "bookmarkLite.remove",
+          "when": "view == bookmarkExplorer && viewItem == bookmark",
+          "group": "edit"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "bookmarkLite.add",
+          "group": "bookmark",
+          "when": "editorTextFocus"
+        },
+        {
+          "command": "bookmarkLite.addWithTags",
+          "group": "bookmark",
+          "when": "editorTextFocus"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && npm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "npm run check-types && npm run lint && node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run check-types && npm run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "node ./out/test/runTest.js",
+    "vsce:package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/vscode": "^1.104.0",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "@vscode/test-electron": "^2.0.3",
+    "@vscode/vsce": "^3.6.2",
+    "esbuild": "^0.17.19",
+    "eslint": "^8.57.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.9.2"
+  }
+}

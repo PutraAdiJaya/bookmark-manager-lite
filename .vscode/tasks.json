@@ -1,0 +1,65 @@
+{
+  "$schema": "https://schema.store/schemas/json/vscode/tasks.json",
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "npm: watch",
+      "dependsOn": [
+        "npm: watch:esbuild",
+        "npm: watch:tsc"
+      ],
+      "dependsOrder": "parallel",
+      "isBackground": true,
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "watch:esbuild",
+      "label": "npm: watch:esbuild",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "esbuild-watch",
+        "fileLocation": "relative",
+        "pattern": {
+          "regexp": "^\\s*>?\\s*([^:]+):(\\d+):(\\d+):\\s+(error|warning):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^\\[watch\\] build started$",
+          "endsPattern": "^\\[watch\\] build finished"
+        }
+      }
+    },
+    {
+      "type": "npm",
+      "script": "watch-tests",
+      "label": "npm: watch-tests",
+      "isBackground": true,
+      "group": "build"
+    },
+    {
+      "type": "npm",
+      "script": "install",
+      "group": "clean",
+      "problemMatcher": [],
+      "label": "npm: install",
+      "detail": "install dependencies from package"
+    },
+    {
+      "type": "npm",
+      "script": "watch:tsc",
+      "label": "npm: watch:tsc",
+      "isBackground": true,
+      "problemMatcher": "$tsc-watch"
+    }
+  ]
+}
