@@ -1,13 +1,25 @@
 import * as vscode from 'vscode';
 import { Bookmark } from '../models';
 import { IBookmarkService } from '../services/IBookmarkService';
+import { BookmarkTreeItem } from '../views/TreeItems';
 
 export async function removeBookmarkCommand(
   bookmarkService: IBookmarkService,
-  bookmark?: Bookmark
+  bookmarkOrTreeItem?: Bookmark | BookmarkTreeItem
 ): Promise<void> {
   try {
-    let targetBookmark = bookmark;
+    let targetBookmark: Bookmark | undefined;
+
+    // Handle both Bookmark and BookmarkTreeItem
+    if (bookmarkOrTreeItem) {
+      if ('bookmark' in bookmarkOrTreeItem) {
+        // It's a BookmarkTreeItem
+        targetBookmark = bookmarkOrTreeItem.bookmark;
+      } else if ('id' in bookmarkOrTreeItem) {
+        // It's a Bookmark
+        targetBookmark = bookmarkOrTreeItem as Bookmark;
+      }
+    }
 
     // If no bookmark provided, show quick pick
     if (!targetBookmark) {
@@ -34,6 +46,12 @@ export async function removeBookmarkCommand(
       }
 
       targetBookmark = selected.bookmark;
+    }
+
+    // Validate that we have a bookmark with an ID
+    if (!targetBookmark || !targetBookmark.id) {
+      vscode.window.showErrorMessage('Invalid bookmark selected');
+      return;
     }
 
     // Show confirmation dialog

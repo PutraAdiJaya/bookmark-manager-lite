@@ -2,13 +2,25 @@ import * as vscode from 'vscode';
 import { Bookmark } from '../models';
 import { IBookmarkService } from '../services/IBookmarkService';
 import { getAbsolutePath } from '../utils/pathUtils';
+import { BookmarkTreeItem } from '../views/TreeItems';
 
 export async function openBookmarkCommand(
   bookmarkService: IBookmarkService,
-  bookmark?: Bookmark
+  bookmarkOrTreeItem?: Bookmark | BookmarkTreeItem
 ): Promise<void> {
   try {
-    let targetBookmark = bookmark;
+    let targetBookmark: Bookmark | undefined;
+
+    // Handle both Bookmark and BookmarkTreeItem
+    if (bookmarkOrTreeItem) {
+      if ('bookmark' in bookmarkOrTreeItem) {
+        // It's a BookmarkTreeItem
+        targetBookmark = bookmarkOrTreeItem.bookmark;
+      } else if ('id' in bookmarkOrTreeItem) {
+        // It's a Bookmark
+        targetBookmark = bookmarkOrTreeItem as Bookmark;
+      }
+    }
 
     // If no bookmark provided, show quick pick
     if (!targetBookmark) {
@@ -37,6 +49,12 @@ export async function openBookmarkCommand(
       targetBookmark = selected.bookmark;
     }
 
+    // Validate that we have a bookmark with required properties
+    if (!targetBookmark || !targetBookmark.filePath) {
+      vscode.window.showErrorMessage('Invalid bookmark selected');
+      return;
+    }
+
     // Get workspace root
     const workspaceFolders = vscode.workspace.workspaceFolders;
     if (!workspaceFolders || workspaceFolders.length === 0) {
@@ -60,10 +78,6 @@ export async function openBookmarkCommand(
       vscode.TextEditorRevealType.InCenter
     );
   } catch (error: any) {
-    if (error.code === 'ENOENT') {
-      vscode.window.showErrorMessage(`Cannot open bookmark: File not found at ${bookmark?.filePath}`);
-    } else {
-      vscode.window.showErrorMessage(`Failed to open bookmark: ${error.message}`);
-    }
+    vscode.window.showErrorMessage(`Failed to open bookmark: ${error.message}`);
   }
 }

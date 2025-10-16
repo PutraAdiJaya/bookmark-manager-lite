@@ -23,12 +23,25 @@
       "id": "364da84234058b59b693093d23614cd6",
       "createdAt": "2025-10-15T12:57:57.590Z",
       "updatedAt": "2025-10-15T12:57:57.590Z"
+    },
+    {
+      "title": "caca",
+      "description": "\"dependsOrder\": \"parallel\",",
+      "filePath": ".vscode/tasks.json",
+      "line": 10,
+      "column": 33,
+      "tags": [
+        "tada"
+      ],
+      "id": "b38e5f54414c68be2d3b2ac9c132d9fd",
+      "createdAt": "2025-10-15T13:17:07.247Z",
+      "updatedAt": "2025-10-15T13:17:07.247Z"
     }
   ],
   "metadata": {
     "version": "1.0.0",
     "workspacePath": "",
-    "totalBookmarks": 2,
-    "lastModified": "2025-10-15T12:57:57.590Z"
+    "totalBookmarks": 3,
+    "lastModified": "2025-10-15T13:17:07.247Z"
   }
 }

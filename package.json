@@ -5,17 +5,15 @@
   "version": "0.0.1",
   "icon": "resources/icon.png",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wijayaac/bookmark-manager-lite.git"
-  },
   "engines": {
     "vscode": "^1.104.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onView:bookmarkExplorer"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "views": {
@@ -66,9 +64,66 @@
         "command": "bookmarkLite.expandAll",
         "title": "Bookmark.Putra: Expand All Groups",
         "category": "Bookmark"
+      },
+      {
+        "command": "bookmarkLite.search",
+        "title": "Bookmark.Putra: Search Bookmarks",
+        "category": "Bookmark"
+      },
+      {
+        "command": "bookmarkLite.searchTreeView",
+        "title": "Bookmark.Putra: Search Tree View",
+        "category": "Bookmark"
+      },
+      {
+        "command": "bookmarkLite.export",
+        "title": "Bookmark.Putra: Export Bookmarks",
+        "category": "Bookmark"
+      },
+      {
+        "command": "bookmarkLite.import",
+        "title": "Bookmark.Putra: Import Bookmarks",
+        "category": "Bookmark"
+      },
+      {
+        "command": "bookmarkLite.validate",
+        "title": "Bookmark.Putra: Validate Bookmarks",
+        "category": "Bookmark"
+      },
+      {
+        "command": "bookmarkLite.statistics",
+        "title": "Bookmark.Putra: Show Statistics",
+        "category": "Bookmark"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "bookmarkLite.add",
+        "key": "ctrl+shift+b",
+        "mac": "cmd+shift+b",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "bookmarkLite.addWithTags",
+        "key": "ctrl+shift+t",
+        "mac": "cmd+shift+t",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "bookmarkLite.search",
+        "key": "ctrl+shift+f",
+        "mac": "cmd+shift+f",
+        "when": "editorTextFocus"
       }
     ],
     "menus": {
+      "view/title": [
+        {
+          "command": "bookmarkLite.searchTreeView",
+          "when": "view == bookmarkExplorer",
+          "group": "navigation"
+        }
+      ],
       "view/item/context": [
         {
           "command": "bookmarkLite.open",
@@ -78,23 +133,49 @@
         {
           "command": "bookmarkLite.editTags",
           "when": "view == bookmarkExplorer && viewItem == bookmark",
-          "group": "edit"
+          "group": "edit@1"
         },
         {
           "command": "bookmarkLite.remove",
           "when": "view == bookmarkExplorer && viewItem == bookmark",
-          "group": "edit"
+          "group": "edit@2"
         }
       ],
       "editor/context": [
         {
           "command": "bookmarkLite.add",
-          "group": "bookmark",
+          "group": "bookmark@1",
           "when": "editorTextFocus"
         },
         {
           "command": "bookmarkLite.addWithTags",
-          "group": "bookmark",
+          "group": "bookmark@2",
+          "when": "editorTextFocus"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "bookmarkLite.search",
+          "when": "editorTextFocus"
+        },
+        {
+          "command": "bookmarkLite.searchTreeView",
+          "when": "view == bookmarkExplorer"
+        },
+        {
+          "command": "bookmarkLite.export",
+          "when": "editorTextFocus"
+        },
+        {
+          "command": "bookmarkLite.import",
+          "when": "editorTextFocus"
+        },
+        {
+          "command": "bookmarkLite.validate",
+          "when": "editorTextFocus"
+        },
+        {
+          "command": "bookmarkLite.statistics",
           "when": "editorTextFocus"
         }
       ]
