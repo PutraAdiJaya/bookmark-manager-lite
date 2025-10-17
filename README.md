@@ -1,71 +1,105 @@
+# 📖 Bookmark Manager Lite
+
 <div align="center">
-
-![Bookmark Manager Lite](resources/hero-banner.svg)
-
-# Bookmark Manager Lite
 
 [![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/bookmark-manager-lite)](https://marketplace.visualstudio.com/items?itemName=bookmark-manager-lite)
 [![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/bookmark-manager-lite)](https://marketplace.visualstudio.com/items?itemName=bookmark-manager-lite)
+[![Visual Studio Marketplace Rating](https://img.shields.io/visual-studio-marketplace/r/bookmark-manager-lite)](https://marketplace.visualstudio.com/items?itemName=bookmark-manager-lite)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-**A professional bookmark manager with multi-color icons and smart numbering**
+### 🎨 Professional Bookmark Manager with Multi-Color Icons & Smart Numbering
+
+**✨ 26 Unique Colors** • **🔢 Intelligent Numbering** • **🚀 High Performance** • **🎯 Zero Configuration**
 
 </div>
 
 ---
 
-A lightweight and intuitive bookmark manager extension for Visual Studio Code and compatible editors that helps you organize and manage your bookmarks directly from the explorer view. Perfect for developers who need to quickly navigate between important code locations across large projects.
+## 🌟 Why Bookmark Manager Lite?
 
-![Screenshot](resources/screenshot-mockup.svg)
+Transform your code navigation experience with a **professional-grade bookmark system** that combines beautiful visuals with powerful organization. Say goodbye to endless scrolling and hello to instant navigation!
+
+### 💡 Perfect For:
+- 🔍 **Large Codebases** - Navigate thousands of lines effortlessly
+- 🏗️ **Complex Projects** - Organize code by features, bugs, or priorities
+- 👥 **Team Collaboration** - Share bookmark configurations via Git
+- 📚 **Code Reviews** - Mark important sections for review
+- 🎓 **Learning** - Bookmark key concepts while studying code
+
+---
+
+## 🎯 What Makes Us Different?
+
+| Feature | Bookmark Manager Lite | Other Extensions |
+|---------|----------------------|------------------|
+| **Multi-Color Icons** | ✅ 26 unique colors | ❌ Single color |
+| **Smart Numbering** | ✅ Tag-based (A1, B1, C1) | ❌ No numbering |
+| **Numbered Gutter Icons** | ✅ Numbers in icons | ❌ Plain icons |
+| **Tag Groups** | ✅ Unlimited with colors | ⚠️ Limited |
+| **Performance** | ✅ 1000+ bookmarks | ⚠️ Slower |
+| **Visual Polish** | ✅ Gradient icons | ❌ Basic |
+| **Zero Config** | ✅ Works instantly | ⚠️ Setup needed |
+| **Cross-Platform** | ✅ All VS Code variants | ⚠️ VS Code only |
+
+---
 
 ## 🔧 Compatibility
 
-This extension works seamlessly across all VS Code-based editors:
+Works seamlessly across **all VS Code-based editors**:
 
 - ✅ **Visual Studio Code** - Full support
 - ✅ **Cursor** - Full support  
 - ✅ **Windsurf** - Full support
 - ✅ **Kiro IDE** - Full support
 - ✅ **Qoder** - Full support
-- ✅ **Other VS Code variants** - Compatible with any editor using VS Code Extension API
+- ✅ **Any VS Code variant** - 100% compatible
 
-## ✨ Features
+## ✨ Key Features
 
-- 📍 **Quick Bookmarking** - Add bookmarks at any line number with a simple command
-- 🎯 **Visual Indicators** - Bookmarked lines display with emoji icons in the gutter and highlighted background
-- ✨ **Non-Intrusive** - Virtual highlighting that doesn't modify your actual code
-- 🗂️ **Explorer Integration** - View all bookmarks in a dedicated explorer panel
-- 🚀 **Fast Navigation** - One-click navigation to any bookmarked location
-- 💾 **Persistent Storage** - Bookmarks are saved per workspace and persist between sessions
-- 🏷️ **Smart Labels** - Automatically generates meaningful bookmark names based on context
-- 🔍 **Search & Filter** - Quickly find bookmarks in large projects using substring matching
-- 📁 **Workspace Scoped** - Bookmarks are organized per workspace for better project management
-- 📂 **Smart Grouping** - Bookmarks are automatically grouped by tags in the sidebar for better organization
-- 🏷️ **Custom Tags** - Create your own tags and assign multiple tags to each bookmark
-- 📋 **Flexible Organization** - Organize bookmarks with any tag names that fit your workflow
-- 📊 **Statistics Dashboard** - View analytics about your bookmark usage
-- 🔄 **Export/Import** - Backup and restore your bookmarks
-- ✅ **Validation** - Check if bookmarked files still exist
-- 🔧 **Advanced Search** - Search bookmarks directly in the tree view
-- 📝 **Inline Titles** - See bookmark titles at the beginning of bookmarked lines in the code editor (non-editable overlay)
-- 🔢 **Sequential Tag-Based Numbering** - Bookmarks are numbered with unique sequential letters for each tag group (A, B, C, etc.)
-- 🎨 **Numbered Gutter Icons** - Bookmark numbers are displayed directly on the gutter icons for quick visual reference
+### 🎨 **Visual Excellence**
+- **26 Unique Colors** - Each tag group gets its own vibrant color (A-Z)
+- **Numbered Icons** - See bookmark numbers directly in editor gutter
+- **Smart Numbering** - Sequential numbering within tag groups (A1, A2, B1, B2...)
+- **Multi-Color Tags** - Beautiful gradient icons for instant recognition
+- **Theme Adaptive** - Automatically adjusts to light/dark themes
+- **Non-Intrusive** - Virtual highlighting that doesn't modify your code
+
+### 🚀 **Powerful Organization**
+- **Custom Tags** - Create unlimited tags (auth, bug-fix, todo, feature, etc.)
+- **Smart Grouping** - Automatic organization by tags in sidebar
+- **Flexible Categorization** - Multiple tags per bookmark
+- **Tag-Based Numbering** - Each group has independent numbering (A1-A999, B1-B999...)
+- **Collapsible Groups** - Expand/collapse tag groups for clean workspace
+
+### ⚡ **Performance & Productivity**
+- **Instant Navigation** - One-click jump to any bookmarked location
+- **Fast Search** - Substring matching across titles, descriptions, and tags
+- **Keyboard Shortcuts** - Quick access via customizable hotkeys
+- **Persistent Storage** - Bookmarks saved per workspace (`.putra/bookmark.json`)
+- **High Performance** - Optimized for 1000+ bookmarks with smart caching
+- **Zero Configuration** - Works perfectly out of the box
+
+### 🔧 **Advanced Features**
+- **Export/Import** - Backup and share bookmark configurations
+- **Statistics Dashboard** - View analytics about bookmark usage
+- **Validation Tools** - Check if bookmarked files still exist
+- **Inline Titles** - See bookmark names at line start (non-editable overlay)
+- **Search in Tree** - Filter bookmarks directly in sidebar
+- **Command Palette** - Full integration with VS Code commands
 
 ## 🚀 Getting Started
 
-### Installation
+### ⚡ Installation (30 seconds)
 
-**For VS Code & Variants (Cursor, Windsurf, Kiro, Qoder):**
+1. **Open Extensions** → Press `Ctrl+Shift+X` (Win/Linux) or `Cmd+Shift+X` (Mac)
+2. **Search** → Type "Bookmark Manager Lite"
+3. **Install** → Click Install button
+4. **Done!** → Start bookmarking immediately ✨
 
-1. Open your editor (VS Code, Cursor, Windsurf, Kiro, or Qoder)
-2. Go to Extensions panel (`Ctrl+Shift+X` / `Cmd+Shift+X`)
-3. Search for "Bookmark Manager Lite"
-4. Click Install
-
-**Alternative Installation:**
-
-- Download from VS Code Marketplace and install manually
-- Compatible with any editor supporting VS Code Extension API
+**Alternative:**
+- 🌐 [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=bookmark-manager-lite)
+- 💻 Command: `ext install PutraAdiJaya.bookmark-manager-lite`
+- 🔄 Works on: VS Code, Cursor, Windsurf, Kiro, Qoder & all variants
 
 ### Basic Usage
 

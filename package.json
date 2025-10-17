@@ -3,16 +3,44 @@
   "displayName": "bookmark-manager-lite",
   "description": "A lightweight bookmark manager extension for Visual Studio Code",
   "version": "0.0.1",
-  "icon": "resources/icon.png",
+  "publisher": "PutraAdiJaya",
+  "galleryBanner": {
+    "color": "#667eea",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PutraAdiJaya/bookmark-manager-lite"
+  },
   "license": "MIT",
   "engines": {
-    "vscode": "^1.104.0"
+    "vscode": "^1.104.0",
+    "node": ">=18.0.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-    "onView:bookmarkExplorer"
+  "keywords": [
+    "bookmark",
+    "bookmarks",
+    "navigation",
+    "code-navigation",
+    "productivity",
+    "multi-color",
+    "numbered",
+    "tags",
+    "organize",
+    "code-organization",
+    "markers",
+    "code-markers",
+    "quick-navigation",
+    "workspace",
+    "visual-indicators",
+    "colored-icons",
+    "tag-groups",
+    "code-management",
+    "developer-tools",
+    "vscode-extension"
   ],
   "main": "./dist/extension.js",
   "contributes": {
