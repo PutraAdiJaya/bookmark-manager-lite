@@ -1,9 +1,10 @@
 {
   "name": "bookmark-manager-lite",
-  "displayName": "bookmark-manager-lite",
-  "description": "A lightweight bookmark manager extension for Visual Studio Code",
-  "version": "0.0.1",
+  "displayName": "Bookmark Manager Lite",
+  "description": "Professional bookmark manager with 26 multi-color icons, smart numbering, and high performance",
+  "version": "1.0.0",
   "publisher": "PutraAdiJaya",
+  "icon": "resources/icon.png",
   "galleryBanner": {
     "color": "#667eea",
     "theme": "dark"
