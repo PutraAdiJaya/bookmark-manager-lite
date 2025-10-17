@@ -19,7 +19,8 @@
 
 Transform your code navigation experience with a **professional-grade bookmark system** that combines beautiful visuals with powerful organization. Say goodbye to endless scrolling and hello to instant navigation!
 
-### 💡 Perfect For:
+### 💡 Perfect For
+
 - 🔍 **Large Codebases** - Navigate thousands of lines effortlessly
 - 🏗️ **Complex Projects** - Organize code by features, bugs, or priorities
 - 👥 **Team Collaboration** - Share bookmark configurations via Git
@@ -57,6 +58,7 @@ Works seamlessly across **all VS Code-based editors**:
 ## ✨ Key Features
 
 ### 🎨 **Visual Excellence**
+
 - **26 Unique Colors** - Each tag group gets its own vibrant color (A-Z)
 - **Numbered Icons** - See bookmark numbers directly in editor gutter
 - **Smart Numbering** - Sequential numbering within tag groups (A1, A2, B1, B2...)
@@ -65,6 +67,7 @@ Works seamlessly across **all VS Code-based editors**:
 - **Non-Intrusive** - Virtual highlighting that doesn't modify your code
 
 ### 🚀 **Powerful Organization**
+
 - **Custom Tags** - Create unlimited tags (auth, bug-fix, todo, feature, etc.)
 - **Smart Grouping** - Automatic organization by tags in sidebar
 - **Flexible Categorization** - Multiple tags per bookmark
@@ -72,6 +75,7 @@ Works seamlessly across **all VS Code-based editors**:
 - **Collapsible Groups** - Expand/collapse tag groups for clean workspace
 
 ### ⚡ **Performance & Productivity**
+
 - **Instant Navigation** - One-click jump to any bookmarked location
 - **Fast Search** - Substring matching across titles, descriptions, and tags
 - **Keyboard Shortcuts** - Quick access via customizable hotkeys
@@ -80,6 +84,7 @@ Works seamlessly across **all VS Code-based editors**:
 - **Zero Configuration** - Works perfectly out of the box
 
 ### 🔧 **Advanced Features**
+
 - **Export/Import** - Backup and share bookmark configurations
 - **Statistics Dashboard** - View analytics about bookmark usage
 - **Validation Tools** - Check if bookmarked files still exist
@@ -97,6 +102,7 @@ Works seamlessly across **all VS Code-based editors**:
 4. **Done!** → Start bookmarking immediately ✨
 
 **Alternative:**
+
 - 🌐 [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=bookmark-manager-lite)
 - 💻 Command: `ext install PutraAdiJaya.bookmark-manager-lite`
 - 🔄 Works on: VS Code, Cursor, Windsurf, Kiro, Qoder & all variants

@@ -2,7 +2,7 @@
   "name": "bookmark-manager-lite",
   "displayName": "Bookmark Manager Lite",
   "description": "Professional bookmark manager with 26 multi-color icons, smart numbering, and high performance",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "publisher": "PutraAdiJaya",
   "icon": "resources/icon.png",
   "galleryBanner": {
@@ -15,7 +15,7 @@
   },
   "license": "MIT",
   "engines": {
-    "vscode": "^1.104.0",
+    "vscode": "^1.100.0",
     "node": ">=18.0.0"
   },
   "categories": [
@@ -229,7 +229,7 @@
     "@types/glob": "^8.1.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "22.x",
-    "@types/vscode": "^1.104.0",
+    "@types/vscode": "^1.100.0",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "@vscode/test-electron": "^2.0.3",
