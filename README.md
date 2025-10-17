@@ -1,10 +1,22 @@
+<div align="center">
+
+![Bookmark Manager Lite](resources/hero-banner.svg)
+
 # Bookmark Manager Lite
 
 [![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/bookmark-manager-lite)](https://marketplace.visualstudio.com/items?itemName=bookmark-manager-lite)
 [![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/bookmark-manager-lite)](https://marketplace.visualstudio.com/items?itemName=bookmark-manager-lite)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+**A professional bookmark manager with multi-color icons and smart numbering**
+
+</div>
+
+---
+
 A lightweight and intuitive bookmark manager extension for Visual Studio Code and compatible editors that helps you organize and manage your bookmarks directly from the explorer view. Perfect for developers who need to quickly navigate between important code locations across large projects.
+
+![Screenshot](resources/screenshot-mockup.svg)
 
 ## 🔧 Compatibility
 
@@ -51,6 +63,7 @@ This extension works seamlessly across all VS Code-based editors:
 4. Click Install
 
 **Alternative Installation:**
+
 - Download from VS Code Marketplace and install manually
 - Compatible with any editor supporting VS Code Extension API
 
@@ -67,7 +80,7 @@ This extension works seamlessly across all VS Code-based editors:
 2. **Visual Feedback**
    - Bookmarked lines are highlighted with a bright background color
    - A numbered bookmark emoji icon (📖) appears in the editor gutter next to the line number
-   - Each tag group is assigned a unique sequential letter (A, B, C, etc.) 
+   - Each tag group is assigned a unique sequential letter (A, B, C, etc.)
    - Bookmarks within each group are numbered sequentially (1, 2, 3, etc.)
    - A tag-based numbered "Bookmark: [title]" indicator appears at the beginning of bookmarked lines (gray, non-editable text overlay)
    - Uses emoji icons with embedded numbers for universal compatibility - no additional assets required
@@ -87,6 +100,7 @@ This extension works seamlessly across all VS Code-based editors:
    - Bookmarks within each group are numbered sequentially
    - Each tag group is collapsible for better organization
    - Example sidebar structure with custom tags:
+
      ```
      📂 BOOKMARKS
      ├── 📁 auth (3)
@@ -131,6 +145,7 @@ Bookmarks are stored locally in your workspace using a simple JSON structure:
 **File Location:** `.putra/bookmark.json`
 
 **Data Structure:**
+
 ```json
 {
   "bookmarks": [
@@ -156,6 +171,7 @@ Bookmarks are stored locally in your workspace using a simple JSON structure:
 ```
 
 **Field Descriptions:**
+
 - `id`: Unique identifier for each bookmark
 - `title`: User-friendly bookmark name
 - `description`: Detailed description of the bookmarked location
@@ -165,6 +181,7 @@ Bookmarks are stored locally in your workspace using a simple JSON structure:
 - `createdAt` & `updatedAt`: Timestamp tracking
 
 **Custom Tag Examples:**
+
 - **Feature-based**: `auth`, `api`, `database`, `ui`, `utils`
 - **Status-based**: `todo`, `bug-fix`, `review`, `optimize`, `deprecated`
 - **Priority-based**: `critical`, `high`, `medium`, `low`
@@ -174,11 +191,13 @@ Bookmarks are stored locally in your workspace using a simple JSON structure:
 ## 🎨 Visual Enhancements
 
 **Modern Icon Design**
+
 - Beautiful gradient-based extension icon with purple and gold colors
 - Professional bookmark ribbon design with depth and shadow effects
 - Optimized for visibility at all sizes (16px to 128px)
 
 **Numbered Bookmark Icons**
+
 - Each bookmark displays a unique number directly on its icon
 - Numbers are embedded in the icon for quick visual reference
 - Automatic theme adaptation (light/dark mode support)
@@ -186,6 +205,7 @@ Bookmarks are stored locally in your workspace using a simple JSON structure:
 - Numbers update automatically when bookmarks are added or removed
 
 **Smart Numbering System**
+
 - Sequential numbering within each tag group (1, 2, 3...)
 - Tag-based prefixes for easy identification (A1, B1, C1...)
 - Visual consistency across all bookmark items
@@ -194,6 +214,7 @@ Bookmarks are stored locally in your workspace using a simple JSON structure:
 ## 🎨 Design Philosophy
 
 **Emoji Icons for Simplicity**
+
 - Uses emoji icons (📖, 📂, 🏷️) for universal compatibility
 - No additional image assets required - keeps extension lightweight
 - Works consistently across all platforms and themes
@@ -243,6 +264,7 @@ None at this time.
 ### 0.0.1
 
 Initial release of Bookmark Manager Lite:
+
 - Basic bookmark functionality
 - Explorer view integration
 - Add and open bookmark commands

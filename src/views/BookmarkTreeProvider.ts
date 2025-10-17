@@ -171,9 +171,17 @@ export class BookmarkTreeProvider implements vscode.TreeDataProvider<BookmarkTre
   }
   
   // Generate a unique sequential letter code for a tag group
+  // Supports: A-Z (26), then AA-AZ (26), BA-BZ (26), etc. like Excel columns
   private getNextTagCode(): string {
-    // Convert index to letter (0->A, 1->B, 2->C, etc.)
-    const code = String.fromCharCode(65 + this.nextCodeIndex); // 65 is ASCII code for 'A'
+    let code = '';
+    let index = this.nextCodeIndex;
+    
+    // Convert index to Excel-style column letters
+    while (index >= 0) {
+      code = String.fromCharCode(65 + (index % 26)) + code;
+      index = Math.floor(index / 26) - 1;
+    }
+    
     this.nextCodeIndex++;
     return code;
   }

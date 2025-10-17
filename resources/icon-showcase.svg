@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200">
+  <defs>
+    <!-- Main gradient -->
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Ribbon gradient -->
+    <linearGradient id="ribbonGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd89b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f6a96c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#19547b;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Shadow -->
+    <filter id="dropShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="4" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="200" fill="#f8f9fa" rx="10"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="32" font-weight="bold" 
+        fill="#2c3e50" text-anchor="middle">
+    Bookmark Manager Lite
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="400" y="70" font-family="Arial, sans-serif" font-size="16" 
+        fill="#7f8c8d" text-anchor="middle">
+    Professional Bookmark Management for VS Code
+  </text>
+  
+  <!-- Icon showcase -->
+  <g transform="translate(100, 90)">
+    <!-- Main icon -->
+    <g filter="url(#dropShadow)">
+      <rect width="80" height="80" fill="url(#mainGradient)" rx="12"/>
+      <path d="M 25 15 L 55 15 L 55 65 L 40 55 L 25 65 Z" 
+            fill="url(#ribbonGrad)" 
+            stroke="#ffffff" 
+            stroke-width="2"/>
+    </g>
+    
+    <text x="40" y="95" font-family="Arial, sans-serif" font-size="12" 
+          fill="#2c3e50" text-anchor="middle">Extension</text>
+  </g>
+  
+  <!-- Numbered icon A1 -->
+  <g transform="translate(250, 90)">
+    <g filter="url(#dropShadow)">
+      <rect width="80" height="80" fill="#4285f4" rx="8"/>
+      <path d="M 15 10 L 65 10 L 65 70 L 40 55 L 15 70 Z" 
+            fill="url(#ribbonGrad)" 
+            stroke="#ffffff" 
+            stroke-width="1.5"/>
+      <text x="40" y="45" font-family="Arial, sans-serif" font-size="24" 
+            font-weight="bold" fill="#ffffff" text-anchor="middle">A1</text>
+    </g>
+    
+    <text x="40" y="95" font-family="Arial, sans-serif" font-size="12" 
+          fill="#2c3e50" text-anchor="middle">Bookmark</text>
+  </g>
+  
+  <!-- Tag folder icon -->
+  <g transform="translate(400, 90)">
+    <g filter="url(#dropShadow)">
+      <rect width="80" height="80" fill="#34a853" rx="8"/>
+      <path d="M 10 25 L 35 25 L 40 30 L 70 30 L 70 65 L 10 65 Z" 
+            fill="url(#ribbonGrad)" 
+            stroke="#ffffff" 
+            stroke-width="1.5"/>
+      <text x="40" y="52" font-family="Arial, sans-serif" font-size="18" 
+            font-weight="bold" fill="#ffffff" text-anchor="middle">C</text>
+    </g>
+    
+    <text x="40" y="95" font-family="Arial, sans-serif" font-size="12" 
+          fill="#2c3e50" text-anchor="middle">Tag Group</text>
+  </g>
+  
+  <!-- Multi-color showcase -->
+  <g transform="translate(550, 90)">
+    <circle cx="15" cy="15" r="12" fill="#4285f4"/>
+    <circle cx="40" cy="15" r="12" fill="#ea4335"/>
+    <circle cx="65" cy="15" r="12" fill="#34a853"/>
+    
+    <circle cx="15" cy="40" r="12" fill="#fbbc05"/>
+    <circle cx="40" cy="40" r="12" fill="#a142f4"/>
+    <circle cx="65" cy="40" r="12" fill="#24c1e0"/>
+    
+    <circle cx="15" cy="65" r="12" fill="#ff6d01"/>
+    <circle cx="40" cy="65" r="12" fill="#9aa0a6"/>
+    <circle cx="65" cy="65" r="12" fill="#00bfa5"/>
+    
+    <text x="40" y="95" font-family="Arial, sans-serif" font-size="12" 
+          fill="#2c3e50" text-anchor="middle">26 Colors</text>
+  </g>
+  
+  <!-- Features -->
+  <g transform="translate(50, 180)">
+    <text font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d">
+      ✨ Multi-color icons • 🔢 Smart numbering • 🎨 26 unique colors • 🚀 High performance
+    </text>
+  </g>
+</svg>

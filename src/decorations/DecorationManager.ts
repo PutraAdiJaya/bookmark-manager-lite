@@ -11,6 +11,7 @@ export class DecorationManager implements vscode.Disposable {
   private tagCodeMap: Map<string, string> = new Map();
   private nextCodeIndex = 0;
   private iconGenerator: IconGenerator;
+  private refreshTimeout?: NodeJS.Timeout;
 
   constructor(private bookmarkService: IBookmarkService) {
     this.iconGenerator = new IconGenerator();
@@ -46,12 +47,18 @@ export class DecorationManager implements vscode.Disposable {
       this.applyDecorations(editor);
     });
 
-    // Subscribe to bookmark changes
+    // Subscribe to bookmark changes with debouncing
     this.disposables.push(
       this.bookmarkService.onBookmarksChanged(() => {
-        // Refresh tag code mapping when bookmarks change
-        this.refreshTagCodeMap();
-        this.refreshAllDecorations();
+        // Debounce refresh to avoid excessive updates
+        if (this.refreshTimeout) {
+          clearTimeout(this.refreshTimeout);
+        }
+        this.refreshTimeout = setTimeout(() => {
+          // Refresh tag code mapping when bookmarks change
+          this.refreshTagCodeMap();
+          this.refreshAllDecorations();
+        }, 100); // 100ms debounce
       })
     );
 
@@ -104,7 +111,7 @@ export class DecorationManager implements vscode.Disposable {
       // Get the tag code (first character) to determine color
       const tagCode = numberPrefix.charAt(0);
       
-      // Define color mapping for multi-color support
+      // Define color mapping for multi-color support (A-Z)
       const colorMap: { [key: string]: { start: string; end: string } } = {
         'A': { start: '#4285f4', end: '#1a73e8' }, // Blue
         'B': { start: '#ea4335', end: '#c5221f' }, // Red
@@ -115,7 +122,23 @@ export class DecorationManager implements vscode.Disposable {
         'G': { start: '#ff6d01', end: '#e65100' }, // Orange
         'H': { start: '#9aa0a6', end: '#5f6368' }, // Gray
         'I': { start: '#00bfa5', end: '#00897b' }, // Teal
-        'J': { start: '#6200ea', end: '#4a148c' }  // Deep Purple
+        'J': { start: '#6200ea', end: '#4a148c' }, // Deep Purple
+        'K': { start: '#e91e63', end: '#c2185b' }, // Pink
+        'L': { start: '#00acc1', end: '#00838f' }, // Light Blue
+        'M': { start: '#8bc34a', end: '#689f38' }, // Light Green
+        'N': { start: '#ff9800', end: '#f57c00' }, // Amber
+        'O': { start: '#9c27b0', end: '#7b1fa2' }, // Deep Purple
+        'P': { start: '#009688', end: '#00796b' }, // Teal
+        'Q': { start: '#ff5722', end: '#e64a19' }, // Deep Orange
+        'R': { start: '#795548', end: '#5d4037' }, // Brown
+        'S': { start: '#607d8b', end: '#455a64' }, // Blue Gray
+        'T': { start: '#cddc39', end: '#afb42b' }, // Lime
+        'U': { start: '#3f51b5', end: '#303f9f' }, // Indigo
+        'V': { start: '#f44336', end: '#d32f2f' }, // Red
+        'W': { start: '#2196f3', end: '#1976d2' }, // Blue
+        'X': { start: '#4caf50', end: '#388e3c' }, // Green
+        'Y': { start: '#ffc107', end: '#ffa000' }, // Amber
+        'Z': { start: '#673ab7', end: '#512da8' }  // Deep Purple
       };
       
       // Default to blue if tag code not found
@@ -257,6 +280,11 @@ export class DecorationManager implements vscode.Disposable {
   }
 
   dispose(): void {
+    // Clear any pending refresh
+    if (this.refreshTimeout) {
+      clearTimeout(this.refreshTimeout);
+    }
+    
     this.decorationType.dispose();
     this.titleDecorationType.dispose();
     // Dispose all numbered decoration types

@@ -17,7 +17,7 @@ const ICON_CONFIG = {
     light: { start: '#667eea', end: '#764ba2' },
     dark: { start: '#764ba2', end: '#667eea' }
   },
-  // Multi-color mapping for different tag codes
+  // Multi-color mapping for different tag codes (A-Z)
   tagColors: {
     'A': { start: '#4285f4', end: '#1a73e8' }, // Blue
     'B': { start: '#ea4335', end: '#c5221f' }, // Red
@@ -28,7 +28,23 @@ const ICON_CONFIG = {
     'G': { start: '#ff6d01', end: '#e65100' }, // Orange
     'H': { start: '#9aa0a6', end: '#5f6368' }, // Gray
     'I': { start: '#00bfa5', end: '#00897b' }, // Teal
-    'J': { start: '#6200ea', end: '#4a148c' }  // Deep Purple
+    'J': { start: '#6200ea', end: '#4a148c' }, // Deep Purple
+    'K': { start: '#e91e63', end: '#c2185b' }, // Pink
+    'L': { start: '#00acc1', end: '#00838f' }, // Light Blue
+    'M': { start: '#8bc34a', end: '#689f38' }, // Light Green
+    'N': { start: '#ff9800', end: '#f57c00' }, // Amber
+    'O': { start: '#9c27b0', end: '#7b1fa2' }, // Deep Purple
+    'P': { start: '#009688', end: '#00796b' }, // Teal
+    'Q': { start: '#ff5722', end: '#e64a19' }, // Deep Orange
+    'R': { start: '#795548', end: '#5d4037' }, // Brown
+    'S': { start: '#607d8b', end: '#455a64' }, // Blue Gray
+    'T': { start: '#cddc39', end: '#afb42b' }, // Lime
+    'U': { start: '#3f51b5', end: '#303f9f' }, // Indigo
+    'V': { start: '#f44336', end: '#d32f2f' }, // Red
+    'W': { start: '#2196f3', end: '#1976d2' }, // Blue
+    'X': { start: '#4caf50', end: '#388e3c' }, // Green
+    'Y': { start: '#ffc107', end: '#ffa000' }, // Amber
+    'Z': { start: '#673ab7', end: '#512da8' }  // Deep Purple
   },
   numberColor: {
     light: '#ffffff',
@@ -71,10 +87,15 @@ export class IconGenerator {
     const svg = this.generateSVG(options);
     const dataUri = this.svgToDataUri(svg);
     
-    // Store in cache (with size limit)
-    if (this.cache.size < 200) {
-      this.cache.set(cacheKey, dataUri);
+    // Store in cache with LRU-style management
+    if (this.cache.size >= 500) {
+      // Remove oldest entry (first key)
+      const firstKey = this.cache.keys().next().value;
+      if (firstKey) {
+        this.cache.delete(firstKey);
+      }
     }
+    this.cache.set(cacheKey, dataUri);
     
     return dataUri;
   }

@@ -4,7 +4,7 @@
 export class TagIconGenerator {
   private cache: Map<string, string>;
   
-  // Color mapping for different tag codes
+  // Color mapping for different tag codes (extended to 26 colors A-Z)
   private static readonly TAG_COLORS = {
     'A': { primary: '#4285f4', secondary: '#1a73e8' }, // Blue
     'B': { primary: '#ea4335', secondary: '#c5221f' }, // Red
@@ -15,7 +15,23 @@ export class TagIconGenerator {
     'G': { primary: '#ff6d01', secondary: '#e65100' }, // Orange
     'H': { primary: '#9aa0a6', secondary: '#5f6368' }, // Gray
     'I': { primary: '#00bfa5', secondary: '#00897b' }, // Teal
-    'J': { primary: '#6200ea', secondary: '#4a148c' }  // Deep Purple
+    'J': { primary: '#6200ea', secondary: '#4a148c' }, // Deep Purple
+    'K': { primary: '#e91e63', secondary: '#c2185b' }, // Pink
+    'L': { primary: '#00acc1', secondary: '#00838f' }, // Light Blue
+    'M': { primary: '#8bc34a', secondary: '#689f38' }, // Light Green
+    'N': { primary: '#ff9800', secondary: '#f57c00' }, // Amber
+    'O': { primary: '#9c27b0', secondary: '#7b1fa2' }, // Deep Purple
+    'P': { primary: '#009688', secondary: '#00796b' }, // Teal
+    'Q': { primary: '#ff5722', secondary: '#e64a19' }, // Deep Orange
+    'R': { primary: '#795548', secondary: '#5d4037' }, // Brown
+    'S': { primary: '#607d8b', secondary: '#455a64' }, // Blue Gray
+    'T': { primary: '#cddc39', secondary: '#afb42b' }, // Lime
+    'U': { primary: '#3f51b5', secondary: '#303f9f' }, // Indigo
+    'V': { primary: '#f44336', secondary: '#d32f2f' }, // Red
+    'W': { primary: '#2196f3', secondary: '#1976d2' }, // Blue
+    'X': { primary: '#4caf50', secondary: '#388e3c' }, // Green
+    'Y': { primary: '#ffc107', secondary: '#ffa000' }, // Amber
+    'Z': { primary: '#673ab7', secondary: '#512da8' }  // Deep Purple
   };
   
   constructor() {
@@ -24,7 +40,7 @@ export class TagIconGenerator {
   
   /**
    * Generate a colored tag/folder icon
-   * @param tagCode Tag code (A, B, C, etc.)
+   * @param tagCode Tag code (A, B, C, AA, AB, etc.)
    * @returns Data URI string for the icon
    */
   generateTagIcon(tagCode: string): string {
@@ -34,8 +50,10 @@ export class TagIconGenerator {
     }
     
     // Get colors for this tag code
-    const colors = tagCode in TagIconGenerator.TAG_COLORS
-      ? TagIconGenerator.TAG_COLORS[tagCode as keyof typeof TagIconGenerator.TAG_COLORS]
+    // For multi-char codes (AA, AB), use first character's color
+    const firstChar = tagCode.charAt(0);
+    const colors = firstChar in TagIconGenerator.TAG_COLORS
+      ? TagIconGenerator.TAG_COLORS[firstChar as keyof typeof TagIconGenerator.TAG_COLORS]
       : { primary: '#9aa0a6', secondary: '#5f6368' }; // Default gray
     
     // Generate SVG with folder/tag icon
@@ -66,7 +84,7 @@ export class TagIconGenerator {
   <!-- Tag code label -->
   <text x="8" y="11" 
         font-family="Arial, sans-serif" 
-        font-size="7" 
+        font-size="${tagCode.length > 1 ? '5' : '7'}" 
         font-weight="bold" 
         fill="#ffffff" 
         text-anchor="middle" 
