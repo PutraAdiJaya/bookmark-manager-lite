@@ -2,12 +2,14 @@
 
 ## Prerequisites
 
-### Required:
+### Required
+
 - **Node.js v18+** or **v20 LTS** (Current: v14.10.0 - TOO OLD!)
 - **npm** (comes with Node.js)
 - **Git** (for repository)
 
-### Check Current Versions:
+### Check Current Versions
+
 ```bash
 node --version  # Should be v18+ or v20+
 npm --version
@@ -16,6 +18,7 @@ npm --version
 ## Step 1: Update Node.js
 
 ### Option A: Using NVM (Recommended)
+
 ```bash
 # Install NVM if not installed
 # Windows: https://github.com/coreybutler/nvm-windows
@@ -29,7 +32,8 @@ node --version  # Should show v20.x.x
 ```
 
 ### Option B: Direct Download
-1. Download Node.js v20 LTS from: https://nodejs.org/
+
+1. Download Node.js v20 LTS from: <https://nodejs.org/>
 2. Install and restart terminal
 3. Verify: `node --version`
 
@@ -51,13 +55,15 @@ npm install
 VS Code Marketplace requires PNG format for icons. You need to convert `resources/icon.svg` to PNG:
 
 ### Option A: Online Converter
-1. Go to: https://cloudconvert.com/svg-to-png
+
+1. Go to: <https://cloudconvert.com/svg-to-png>
 2. Upload `resources/icon.svg`
 3. Set size to 128x128
 4. Download as `icon.png`
 5. Save to `resources/icon.png`
 
 ### Option B: Using ImageMagick
+
 ```bash
 # Install ImageMagick first
 # Then convert:
@@ -65,6 +71,7 @@ magick convert -background none -size 128x128 resources/icon.svg resources/icon.
 ```
 
 ### Option C: Using Inkscape
+
 ```bash
 inkscape resources/icon.svg --export-png=resources/icon.png --export-width=128 --export-height=128
 ```
@@ -72,6 +79,7 @@ inkscape resources/icon.svg --export-png=resources/icon.png --export-width=128 -
 ## Step 4: Update package.json
 
 Add icon path to package.json:
+
 ```json
 {
   "icon": "resources/icon.png"
@@ -102,12 +110,14 @@ npx vsce package
 ## Step 7: Test Extension
 
 ### Option A: Test in Development
+
 ```bash
 # Press F5 in VS Code
 # Extension will run in Development Host
 ```
 
 ### Option B: Install VSIX Locally
+
 ```bash
 # In VS Code:
 # 1. Open Extensions panel (Ctrl+Shift+X)
@@ -116,15 +126,19 @@ npx vsce package
 # 4. Choose bookmark-manager-lite-0.0.1.vsix
 ```
 
-## Step 8: Publish to Marketplace
+## Step 8: Publish to Marketplaces
 
-### Prerequisites:
+### A. VS Code Marketplace (Microsoft)
+
+#### Prerequisites
+
 1. Create Microsoft account
 2. Create Azure DevOps organization
 3. Generate Personal Access Token (PAT)
 4. Create publisher account
 
-### Publish:
+#### Publish
+
 ```bash
 # Login (first time only)
 npx vsce login <publisher-name>
@@ -138,18 +152,68 @@ npx vsce publish minor  # 0.0.1 -> 0.1.0
 npx vsce publish major  # 0.0.1 -> 1.0.0
 ```
 
+### B. Open VSX Registry (Open Source)
+
+Open VSX is the open-source alternative used by VSCodium, Gitpod, Eclipse Theia, and other VS Code-compatible editors.
+
+#### Prerequisites
+
+1. Create account at <https://open-vsx.org/>
+2. Generate Personal Access Token at <https://open-vsx.org/user-settings/tokens>
+3. Install ovsx CLI: `npm install -g ovsx`
+
+#### Publish
+
+```bash
+# Set your access token (one time)
+export OVSX_PAT=your-token-here
+# Or on Windows:
+set OVSX_PAT=your-token-here
+
+# Publish to Open VSX
+npx ovsx publish bookmark-manager-lite-1.0.5.vsix -p $OVSX_PAT
+
+# Or publish directly (will create VSIX automatically)
+npx ovsx publish -p $OVSX_PAT
+```
+
+#### Alternative: Manual Upload
+
+1. Go to <https://open-vsx.org/>
+2. Login to your account
+3. Click "Publish" in the top menu
+4. Upload your `.vsix` file
+5. Fill in any additional details
+
+### C. Publish to Both Marketplaces
+
+```bash
+# Build the package once
+npm run vsce:package
+
+# Publish to VS Code Marketplace
+npx vsce publish
+
+# Publish to Open VSX
+npx ovsx publish bookmark-manager-lite-1.0.5.vsix -p $OVSX_PAT
+```
+
 ## Troubleshooting
 
 ### Error: "Cannot find module 'node:events'"
+
 **Solution**: Update Node.js to v18+ or v20+
 
 ### Error: "SVGs are restricted in README.md"
+
 **Solution**: Already fixed! We removed SVG references from README.
 
 ### Error: "Missing icon"
+
 **Solution**: Convert icon.svg to icon.png and add to package.json
 
 ### Error: "Publisher not found"
+
 **Solution**: Add `"publisher": "YourPublisherName"` to package.json
 
 ## Quick Commands Reference
@@ -164,10 +228,14 @@ npm run test            # Run tests
 npm run package         # Build for production
 npm run vsce:package    # Create VSIX
 
-# Publishing
+# Publishing - VS Code Marketplace
 npx vsce login          # Login to marketplace
 npx vsce publish        # Publish extension
 npx vsce package        # Create VSIX only
+
+# Publishing - Open VSX
+npx ovsx publish        # Publish to Open VSX
+npx ovsx publish -p $OVSX_PAT  # With token
 ```
 
 ## Checklist Before Publishing
@@ -182,7 +250,9 @@ npx vsce package        # Create VSIX only
 - [ ] License file exists
 - [ ] Extension tested locally (F5)
 - [ ] VSIX package created successfully
-- [ ] Personal Access Token (PAT) ready
+- [ ] VS Code Marketplace PAT ready (for vsce)
+- [ ] Open VSX account created (optional)
+- [ ] Open VSX PAT ready (optional)
 
 ## Current Status
 
@@ -206,5 +276,8 @@ npx vsce package        # Create VSIX only
 ---
 
 **Need Help?**
-- VS Code Publishing Guide: https://code.visualstudio.com/api/working-with-extensions/publishing-extension
-- vsce Documentation: https://github.com/microsoft/vscode-vsce
+
+- VS Code Publishing Guide: <https://code.visualstudio.com/api/working-with-extensions/publishing-extension>
+- vsce Documentation: <https://github.com/microsoft/vscode-vsce>
+- Open VSX Publishing Guide: <https://github.com/eclipse/openvsx/wiki/Publishing-Extensions>
+- Open VSX Registry: <https://open-vsx.org/>

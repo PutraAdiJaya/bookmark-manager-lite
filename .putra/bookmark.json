@@ -1,47 +1,291 @@
 {
   "bookmarks": [
     {
-      "title": "makde",
-      "description": "\"label\": \"npm: watch\",",
-      "filePath": ".vscode/tasks.json",
-      "line": 5,
-      "column": 11,
-      "tags": [],
-      "id": "260ba3c733c7fca613c1afe7f7037372",
-      "createdAt": "2025-10-15T12:57:28.395Z",
-      "updatedAt": "2025-10-15T12:57:28.395Z"
-    },
-    {
-      "title": "seep",
-      "description": "\"$schema\": \"https://schema.store/schemas/json/vscode/tasks.json\",",
-      "filePath": ".vscode/tasks.json",
-      "line": 1,
+      "title": "Fix authentication bug",
+      "description": "User login fails when password contains special characters",
+      "filePath": "demo/auth.ts",
+      "line": 15,
       "column": 0,
       "tags": [
-        "penting"
+        "TODO",
+        "bug"
       ],
-      "id": "364da84234058b59b693093d23614cd6",
-      "createdAt": "2025-10-15T12:57:57.590Z",
-      "updatedAt": "2025-10-15T12:57:57.590Z"
+      "id": "todo001",
+      "createdAt": "2025-10-19T10:00:00.000Z",
+      "updatedAt": "2025-10-19T10:00:00.000Z"
     },
     {
-      "title": "caca",
-      "description": "\"dependsOrder\": \"parallel\",",
-      "filePath": ".vscode/tasks.json",
-      "line": 10,
-      "column": 33,
+      "title": "Add input validation",
+      "description": "Validate email format before sending to API",
+      "filePath": "demo/auth.ts",
+      "line": 28,
+      "column": 0,
       "tags": [
-        "tada"
+        "TODO",
+        "enhancement"
       ],
-      "id": "b38e5f54414c68be2d3b2ac9c132d9fd",
-      "createdAt": "2025-10-15T13:17:07.247Z",
-      "updatedAt": "2025-10-15T13:17:07.247Z"
+      "id": "todo002",
+      "createdAt": "2025-10-19T10:05:00.000Z",
+      "updatedAt": "2025-10-19T10:05:00.000Z"
+    },
+    {
+      "title": "Implement rate limiting",
+      "description": "Add rate limiting to prevent brute force attacks",
+      "filePath": "demo/auth.ts",
+      "line": 42,
+      "column": 0,
+      "tags": [
+        "TODO",
+        "security"
+      ],
+      "id": "todo003",
+      "createdAt": "2025-10-19T10:10:00.000Z",
+      "updatedAt": "2025-10-19T10:10:00.000Z"
+    },
+    {
+      "title": "Database connection setup",
+      "description": "Main database configuration with connection pooling",
+      "filePath": "demo/database.ts",
+      "line": 8,
+      "column": 0,
+      "tags": [
+        "important",
+        "config"
+      ],
+      "id": "bookmark001",
+      "createdAt": "2025-10-19T09:00:00.000Z",
+      "updatedAt": "2025-10-19T09:00:00.000Z"
+    },
+    {
+      "title": "Query builder helper",
+      "description": "Reusable query builder for complex SQL queries",
+      "filePath": "demo/database.ts",
+      "line": 25,
+      "column": 0,
+      "tags": [
+        "important",
+        "utility"
+      ],
+      "id": "bookmark002",
+      "createdAt": "2025-10-19T09:15:00.000Z",
+      "updatedAt": "2025-10-19T09:15:00.000Z"
+    },
+    {
+      "title": "API endpoint definition",
+      "description": "Main REST API routes configuration",
+      "filePath": "demo/api.ts",
+      "line": 12,
+      "column": 0,
+      "tags": [
+        "api",
+        "routes"
+      ],
+      "id": "bookmark003",
+      "createdAt": "2025-10-19T09:30:00.000Z",
+      "updatedAt": "2025-10-19T09:30:00.000Z"
+    },
+    {
+      "title": "Error handler middleware",
+      "description": "Global error handling for all API requests",
+      "filePath": "demo/api.ts",
+      "line": 45,
+      "column": 0,
+      "tags": [
+        "api",
+        "middleware"
+      ],
+      "id": "bookmark004",
+      "createdAt": "2025-10-19T09:45:00.000Z",
+      "updatedAt": "2025-10-19T09:45:00.000Z"
+    },
+    {
+      "title": "Add pagination support",
+      "description": "Implement cursor-based pagination for large datasets",
+      "filePath": "demo/api.ts",
+      "line": 67,
+      "column": 0,
+      "tags": [
+        "TODO",
+        "api"
+      ],
+      "id": "todo004",
+      "createdAt": "2025-10-19T10:20:00.000Z",
+      "updatedAt": "2025-10-19T10:20:00.000Z"
+    },
+    {
+      "title": "User model definition",
+      "description": "TypeScript interface for User entity",
+      "filePath": "demo/models.ts",
+      "line": 5,
+      "column": 0,
+      "tags": [
+        "model",
+        "types"
+      ],
+      "id": "bookmark005",
+      "createdAt": "2025-10-19T08:00:00.000Z",
+      "updatedAt": "2025-10-19T08:00:00.000Z"
+    },
+    {
+      "title": "Product model definition",
+      "description": "TypeScript interface for Product entity with pricing",
+      "filePath": "demo/models.ts",
+      "line": 18,
+      "column": 0,
+      "tags": [
+        "model",
+        "types"
+      ],
+      "id": "bookmark006",
+      "createdAt": "2025-10-19T08:15:00.000Z",
+      "updatedAt": "2025-10-19T08:15:00.000Z"
+    },
+    {
+      "title": "Add Order model",
+      "description": "Create Order interface with relations to User and Product",
+      "filePath": "demo/models.ts",
+      "line": 35,
+      "column": 0,
+      "tags": [
+        "TODO",
+        "model"
+      ],
+      "id": "todo005",
+      "createdAt": "2025-10-19T10:30:00.000Z",
+      "updatedAt": "2025-10-19T10:30:00.000Z"
+    },
+    {
+      "title": "Logger utility",
+      "description": "Custom logger with different log levels and file output",
+      "filePath": "demo/utils.ts",
+      "line": 10,
+      "column": 0,
+      "tags": [
+        "utility",
+        "logging"
+      ],
+      "id": "bookmark007",
+      "createdAt": "2025-10-19T08:30:00.000Z",
+      "updatedAt": "2025-10-19T08:30:00.000Z"
+    },
+    {
+      "title": "Date formatter",
+      "description": "Format dates for different locales and timezones",
+      "filePath": "demo/utils.ts",
+      "line": 28,
+      "column": 0,
+      "tags": [
+        "utility",
+        "formatting"
+      ],
+      "id": "bookmark008",
+      "createdAt": "2025-10-19T08:45:00.000Z",
+      "updatedAt": "2025-10-19T08:45:00.000Z"
+    },
+    {
+      "title": "Add encryption utility",
+      "description": "Implement AES encryption for sensitive data",
+      "filePath": "demo/utils.ts",
+      "line": 45,
+      "column": 0,
+      "tags": [
+        "TODO",
+        "security",
+        "utility"
+      ],
+      "id": "todo006",
+      "createdAt": "2025-10-19T10:40:00.000Z",
+      "updatedAt": "2025-10-19T10:40:00.000Z"
+    },
+    {
+      "title": "Test suite setup",
+      "description": "Jest configuration and test utilities",
+      "filePath": "demo/test.spec.ts",
+      "line": 3,
+      "column": 0,
+      "tags": [
+        "testing",
+        "config"
+      ],
+      "id": "bookmark009",
+      "createdAt": "2025-10-19T11:00:00.000Z",
+      "updatedAt": "2025-10-19T11:00:00.000Z"
+    },
+    {
+      "title": "Write integration tests",
+      "description": "Add integration tests for API endpoints",
+      "filePath": "demo/test.spec.ts",
+      "line": 25,
+      "column": 0,
+      "tags": [
+        "TODO",
+        "testing"
+      ],
+      "id": "todo007",
+      "createdAt": "2025-10-19T11:15:00.000Z",
+      "updatedAt": "2025-10-19T11:15:00.000Z"
+    },
+    {
+      "title": "Performance optimization needed",
+      "description": "This query is slow with large datasets, needs indexing",
+      "filePath": "demo/database.ts",
+      "line": 58,
+      "column": 0,
+      "tags": [
+        "TODO",
+        "performance"
+      ],
+      "id": "todo008",
+      "createdAt": "2025-10-19T11:30:00.000Z",
+      "updatedAt": "2025-10-19T11:30:00.000Z"
+    },
+    {
+      "title": "Cache implementation",
+      "description": "Redis cache layer for frequently accessed data",
+      "filePath": "demo/cache.ts",
+      "line": 7,
+      "column": 0,
+      "tags": [
+        "performance",
+        "cache"
+      ],
+      "id": "bookmark010",
+      "createdAt": "2025-10-19T11:45:00.000Z",
+      "updatedAt": "2025-10-19T11:45:00.000Z"
+    },
+    {
+      "title": "Add cache invalidation",
+      "description": "Implement smart cache invalidation strategy",
+      "filePath": "demo/cache.ts",
+      "line": 32,
+      "column": 0,
+      "tags": [
+        "TODO",
+        "cache"
+      ],
+      "id": "todo009",
+      "createdAt": "2025-10-19T12:00:00.000Z",
+      "updatedAt": "2025-10-19T12:00:00.000Z"
+    },
+    {
+      "title": "Environment variables",
+      "description": "Configuration for different environments (dev, staging, prod)",
+      "filePath": "demo/config.ts",
+      "line": 4,
+      "column": 0,
+      "tags": [
+        "config",
+        "important"
+      ],
+      "id": "bookmark011",
+      "createdAt": "2025-10-19T07:00:00.000Z",
+      "updatedAt": "2025-10-19T07:00:00.000Z"
     }
   ],
   "metadata": {
     "version": "1.0.0",
     "workspacePath": "",
-    "totalBookmarks": 3,
-    "lastModified": "2025-10-15T13:17:07.247Z"
+    "totalBookmarks": 20,
+    "lastModified": "2025-10-19T12:00:00.000Z"
   }
 }

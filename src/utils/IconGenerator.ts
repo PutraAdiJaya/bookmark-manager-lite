@@ -18,34 +18,35 @@ const ICON_CONFIG = {
     dark: { start: '#764ba2', end: '#667eea' }
   },
   // Multi-color mapping for different tag codes (A-Z)
-  tagColors: {
-    'A': { start: '#4285f4', end: '#1a73e8' }, // Blue
-    'B': { start: '#ea4335', end: '#c5221f' }, // Red
-    'C': { start: '#34a853', end: '#188038' }, // Green
-    'D': { start: '#fbbc05', end: '#f9ab00' }, // Yellow
-    'E': { start: '#a142f4', end: '#7627bb' }, // Purple
-    'F': { start: '#24c1e0', end: '#0097a7' }, // Cyan
-    'G': { start: '#ff6d01', end: '#e65100' }, // Orange
-    'H': { start: '#9aa0a6', end: '#5f6368' }, // Gray
-    'I': { start: '#00bfa5', end: '#00897b' }, // Teal
-    'J': { start: '#6200ea', end: '#4a148c' }, // Deep Purple
-    'K': { start: '#e91e63', end: '#c2185b' }, // Pink
-    'L': { start: '#00acc1', end: '#00838f' }, // Light Blue
-    'M': { start: '#8bc34a', end: '#689f38' }, // Light Green
-    'N': { start: '#ff9800', end: '#f57c00' }, // Amber
-    'O': { start: '#9c27b0', end: '#7b1fa2' }, // Deep Purple
-    'P': { start: '#009688', end: '#00796b' }, // Teal
-    'Q': { start: '#ff5722', end: '#e64a19' }, // Deep Orange
-    'R': { start: '#795548', end: '#5d4037' }, // Brown
-    'S': { start: '#607d8b', end: '#455a64' }, // Blue Gray
-    'T': { start: '#cddc39', end: '#afb42b' }, // Lime
-    'U': { start: '#3f51b5', end: '#303f9f' }, // Indigo
-    'V': { start: '#f44336', end: '#d32f2f' }, // Red
-    'W': { start: '#2196f3', end: '#1976d2' }, // Blue
-    'X': { start: '#4caf50', end: '#388e3c' }, // Green
-    'Y': { start: '#ffc107', end: '#ffa000' }, // Amber
-    'Z': { start: '#673ab7', end: '#512da8' }  // Deep Purple
-  },
+  // Multi-color palette for different tag codes (A-Z). Index 0 -> 'A'
+  tagColors: [
+    { start: '#4285f4', end: '#1a73e8' }, // A Blue
+    { start: '#ea4335', end: '#c5221f' }, // B Red
+    { start: '#34a853', end: '#188038' }, // C Green
+    { start: '#fbbc05', end: '#f9ab00' }, // D Yellow
+    { start: '#a142f4', end: '#7627bb' }, // E Purple
+    { start: '#24c1e0', end: '#0097a7' }, // F Cyan
+    { start: '#ff6d01', end: '#e65100' }, // G Orange
+    { start: '#9aa0a6', end: '#5f6368' }, // H Gray
+    { start: '#00bfa5', end: '#00897b' }, // I Teal
+    { start: '#6200ea', end: '#4a148c' }, // J Deep Purple
+    { start: '#e91e63', end: '#c2185b' }, // K Pink
+    { start: '#00acc1', end: '#00838f' }, // L Light Blue
+    { start: '#8bc34a', end: '#689f38' }, // M Light Green
+    { start: '#ff9800', end: '#f57c00' }, // N Amber
+    { start: '#9c27b0', end: '#7b1fa2' }, // O Deep Purple
+    { start: '#009688', end: '#00796b' }, // P Teal
+    { start: '#ff5722', end: '#e64a19' }, // Q Deep Orange
+    { start: '#795548', end: '#5d4037' }, // R Brown
+    { start: '#607d8b', end: '#455a64' }, // S Blue Gray
+    { start: '#cddc39', end: '#afb42b' }, // T Lime
+    { start: '#3f51b5', end: '#303f9f' }, // U Indigo
+    { start: '#f44336', end: '#d32f2f' }, // V Red
+    { start: '#2196f3', end: '#1976d2' }, // W Blue
+    { start: '#4caf50', end: '#388e3c' }, // X Green
+    { start: '#ffc107', end: '#ffa000' }, // Y Amber
+    { start: '#673ab7', end: '#512da8' }  // Z Deep Purple
+  ],
   numberColor: {
     light: '#ffffff',
     dark: '#ffffff'
@@ -121,9 +122,10 @@ export class IconGenerator {
     const size = options.size || ICON_CONFIG.size;
     
     // Use tag-specific colors if tagCode is provided, otherwise use default
-    let colors;
-    if (options.tagCode && options.tagCode in ICON_CONFIG.tagColors) {
-      colors = ICON_CONFIG.tagColors[options.tagCode as keyof typeof ICON_CONFIG.tagColors];
+    let colors: { start: string; end: string };
+    if (options.tagCode && /^[A-Z]$/.test(options.tagCode)) {
+      const idx = options.tagCode.charCodeAt(0) - 65; // A -> 0
+      colors = ICON_CONFIG.tagColors[idx] || ICON_CONFIG.backgroundColor[options.theme];
     } else {
       colors = ICON_CONFIG.backgroundColor[options.theme];
     }

@@ -1,8 +1,8 @@
 {
   "name": "bookmark-manager-lite",
-  "displayName": "Bookmark Manager Lite",
-  "description": "Professional bookmark manager with 26 multi-color icons, smart numbering, and high performance",
-  "version": "1.0.4",
+  "displayName": "Bookmark Manager Lite - Fire TODO Icons",
+  "description": "Professional bookmark manager with fire TODO icons, 26 multi-color icons, smart numbering, and high performance",
+  "version": "1.0.6",
   "publisher": "PutraAdiJaya",
   "icon": "resources/icon.png",
   "galleryBanner": {
@@ -48,8 +48,12 @@
     "views": {
       "explorer": [
         {
+          "id": "bookmarkTodoExplorer",
+          "name": "🔥TODO Bookmarks Putra"
+        },
+        {
           "id": "bookmarkExplorer",
-          "name": "Bookmark Putra"
+          "name": "🔖Bookmarks Putra"
         }
       ]
     },
@@ -80,6 +84,11 @@
         "category": "Bookmark"
       },
       {
+        "command": "bookmarkLite.editDetails",
+        "title": "Bookmark.Putra: Edit Bookmark Details",
+        "category": "Bookmark"
+      },
+      {
         "command": "bookmarkLite.clearAll",
         "title": "Bookmark.Putra: Clear All Bookmarks",
         "category": "Bookmark"
@@ -102,6 +111,30 @@
       {
         "command": "bookmarkLite.searchTreeView",
         "title": "Bookmark.Putra: Search Tree View",
+        "category": "Bookmark",
+        "icon": "$(search)"
+      },
+      {
+        "command": "bookmarkLite.toggleBookmark",
+        "title": "Bookmark.Putra: Toggle Bookmark on Current Line",
+        "category": "Bookmark",
+        "icon": "$(add)"
+      },
+      {
+        "command": "bookmarkLite.toggleTodoBookmark",
+        "title": "Bookmark.Putra: Toggle TODO Bookmark on Current Line",
+        "category": "Bookmark",
+        "icon": "$(add)"
+      },
+      {
+        "command": "bookmarkLite.searchTodoTreeView",
+        "title": "Bookmark.Putra: Search TODO Tree View",
+        "category": "Bookmark",
+        "icon": "$(search)"
+      },
+      {
+        "command": "bookmarkLite.addTodo",
+        "title": "Bookmark.Putra: Add TODO Bookmark",
         "category": "Bookmark"
       },
       {
@@ -148,26 +181,46 @@
     "menus": {
       "view/title": [
         {
+          "command": "bookmarkLite.toggleBookmark",
+          "when": "view == bookmarkExplorer",
+          "group": "navigation@1"
+        },
+        {
+          "command": "bookmarkLite.toggleTodoBookmark",
+          "when": "view == bookmarkTodoExplorer",
+          "group": "navigation@1"
+        },
+        {
           "command": "bookmarkLite.searchTreeView",
           "when": "view == bookmarkExplorer",
-          "group": "navigation"
+          "group": "navigation@2"
+        },
+        {
+          "command": "bookmarkLite.searchTodoTreeView",
+          "when": "view == bookmarkTodoExplorer",
+          "group": "navigation@2"
         }
       ],
       "view/item/context": [
         {
           "command": "bookmarkLite.open",
-          "when": "view == bookmarkExplorer && viewItem == bookmark",
+          "when": "(view == bookmarkExplorer || view == bookmarkTodoExplorer) && viewItem == bookmark",
           "group": "navigation"
         },
         {
-          "command": "bookmarkLite.editTags",
-          "when": "view == bookmarkExplorer && viewItem == bookmark",
+          "command": "bookmarkLite.editDetails",
+          "when": "(view == bookmarkExplorer || view == bookmarkTodoExplorer) && viewItem == bookmark",
           "group": "edit@1"
         },
         {
-          "command": "bookmarkLite.remove",
-          "when": "view == bookmarkExplorer && viewItem == bookmark",
+          "command": "bookmarkLite.editTags",
+          "when": "(view == bookmarkExplorer || view == bookmarkTodoExplorer) && viewItem == bookmark",
           "group": "edit@2"
+        },
+        {
+          "command": "bookmarkLite.remove",
+          "when": "(view == bookmarkExplorer || view == bookmarkTodoExplorer) && viewItem == bookmark",
+          "group": "edit@3"
         }
       ],
       "editor/context": [
@@ -177,8 +230,13 @@
           "when": "editorTextFocus"
         },
         {
-          "command": "bookmarkLite.addWithTags",
+          "command": "bookmarkLite.addTodo",
           "group": "bookmark@2",
+          "when": "editorTextFocus"
+        },
+        {
+          "command": "bookmarkLite.addWithTags",
+          "group": "bookmark@3",
           "when": "editorTextFocus"
         }
       ],
@@ -223,7 +281,10 @@
     "check-types": "tsc --noEmit",
     "lint": "eslint src",
     "test": "node ./out/test/runTest.js",
-    "vsce:package": "vsce package"
+    "vsce:package": "vsce package",
+    "vsce:publish": "vsce publish",
+    "ovsx:publish": "ovsx publish",
+    "publish:all": "npm run vsce:publish && npm run ovsx:publish"
   },
   "devDependencies": {
     "@types/glob": "^8.1.0",

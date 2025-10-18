@@ -3,3 +3,14 @@ dist
 node_modules
 .vscode-test/
 *.vsix
+.kiro/** 
+.specstory/**
+.temp/**
+.turbo/**
+.turbo-test/**
+.fiddle/**
+.fiddle-test/**
+.fiddle-vscode/**
+.fiddle-vscode-test/**
+.putra/**
+demo/**

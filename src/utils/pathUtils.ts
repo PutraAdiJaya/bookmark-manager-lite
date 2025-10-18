@@ -10,5 +10,8 @@ export function isPathWithinWorkspace(absolutePath: string, workspaceRoot: strin
 }
 
 export function getAbsolutePath(relativePath: string, workspaceRoot: string): string {
+  if (path.isAbsolute(relativePath)) {
+    return relativePath;
+  }
   return path.join(workspaceRoot, relativePath);
 }

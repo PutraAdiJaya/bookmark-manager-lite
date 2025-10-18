@@ -1,15 +1,15 @@
-# 📖 Bookmark Manager Lite
+# � Boookmark Manager Lite - Now with Fire TODO Icons!
 
 <div align="center">
 
-[![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/bookmark-manager-lite)](https://marketplace.visualstudio.com/items?itemName=bookmark-manager-lite)
-[![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/bookmark-manager-lite)](https://marketplace.visualstudio.com/items?itemName=bookmark-manager-lite)
-[![Visual Studio Marketplace Rating](https://img.shields.io/visual-studio-marketplace/r/bookmark-manager-lite)](https://marketplace.visualstudio.com/items?itemName=bookmark-manager-lite)
+[![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/PutraAdiJaya.bookmark-manager-lite)](https://marketplace.visualstudio.com/items?itemName=PutraAdiJaya.bookmark-manager-lite)
+[![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/PutraAdiJaya.bookmark-manager-lite)](https://marketplace.visualstudio.com/items?itemName=PutraAdiJaya.bookmark-manager-lite)
+[![Open VSX Downloads](https://img.shields.io/open-vsx/dt/PutraAdiJaya/bookmark-manager-lite?label=Open%20VSX%20downloads)](https://open-vsx.org/extension/PutraAdiJaya/bookmark-manager-lite)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-### 🎨 Professional Bookmark Manager with Multi-Color Icons & Smart Numbering
+### 🎨 Professional Bookmark Manager with Multi-Color Icons, Smart Numbering & Fire TODO Tracking
 
-**✨ 26 Unique Colors** • **🔢 Intelligent Numbering** • **🚀 High Performance** • **🎯 Zero Configuration**
+**🔥 Fire TODO Icons** • **✨ 26 Unique Colors** • **� Intelligent Numobering** • **🚀 High Performance** • **🎯 Zero Configuration**
 
 </div>
 
@@ -17,13 +17,14 @@
 
 ## 🌟 Why Bookmark Manager Lite?
 
-Transform your code navigation experience with a **professional-grade bookmark system** that combines beautiful visuals with powerful organization. Say goodbye to endless scrolling and hello to instant navigation!
+Transform your code navigation experience with a **professional-grade bookmark system** that combines beautiful visuals with powerful organization. Now featuring **🔥 Fire Icons for TODO items** - making your tasks impossible to miss!
 
 ### 💡 Perfect For
 
+- � **LTODO Management** - Track tasks with eye-catching fire icons that stand out
 - 🔍 **Large Codebases** - Navigate thousands of lines effortlessly
 - 🏗️ **Complex Projects** - Organize code by features, bugs, or priorities
-- 👥 **Team Collaboration** - Share bookmark configurations via Git
+- � **Teaem Collaboration** - Share bookmark configurations via Git
 - 📚 **Code Reviews** - Mark important sections for review
 - 🎓 **Learning** - Bookmark key concepts while studying code
 
@@ -33,6 +34,8 @@ Transform your code navigation experience with a **professional-grade bookmark s
 
 | Feature | Bookmark Manager Lite | Other Extensions |
 |---------|----------------------|------------------|
+| **🔥 Fire TODO Icons** | ✅ Distinctive fire gradient | ❌ No special TODO icons |
+| **Separate TODO Section** | ✅ Dedicated TODO view | ❌ Mixed with bookmarks |
 | **Multi-Color Icons** | ✅ 26 unique colors | ❌ Single color |
 | **Smart Numbering** | ✅ Tag-based (A1, B1, C1) | ❌ No numbering |
 | **Numbered Gutter Icons** | ✅ Numbers in icons | ❌ Plain icons |
@@ -57,6 +60,14 @@ Works seamlessly across **all VS Code-based editors**:
 
 ## ✨ Key Features
 
+### 🔥 **NEW: Fire TODO Icons**
+
+- **Distinctive Fire Gradient** - TODO bookmarks use eye-catching red-orange-yellow fire icons
+- **Consistent Everywhere** - Fire icons in tree view, gutter, and tag groups
+- **Instant Recognition** - Spot your TODO items at a glance
+- **Separate TODO Section** - Dedicated "🔥 TODO Bookmarks" panel keeps tasks organized
+- **Quick TODO Creation** - Right-click to add TODO bookmarks instantly
+
 ### 🎨 **Visual Excellence**
 
 - **26 Unique Colors** - Each tag group gets its own vibrant color (A-Z)
@@ -73,11 +84,13 @@ Works seamlessly across **all VS Code-based editors**:
 - **Flexible Categorization** - Multiple tags per bookmark
 - **Tag-Based Numbering** - Each group has independent numbering (A1-A999, B1-B999...)
 - **Collapsible Groups** - Expand/collapse tag groups for clean workspace
+- **Split Views** - TODO bookmarks in separate section from regular bookmarks
 
 ### ⚡ **Performance & Productivity**
 
 - **Instant Navigation** - One-click jump to any bookmarked location
 - **Fast Search** - Substring matching across titles, descriptions, and tags
+- **Quick Toggle** - Add/remove bookmarks on current line with one click
 - **Keyboard Shortcuts** - Quick access via customizable hotkeys
 - **Persistent Storage** - Bookmarks saved per workspace (`.putra/bookmark.json`)
 - **High Performance** - Optimized for 1000+ bookmarks with smart caching
@@ -92,9 +105,49 @@ Works seamlessly across **all VS Code-based editors**:
 - **Search in Tree** - Filter bookmarks directly in sidebar
 - **Command Palette** - Full integration with VS Code commands
 
+## � Fire TODSO Icons - What's New?
+
+The latest version introduces **Fire TODO Icons** - a game-changing visual enhancement that makes your TODO items impossible to miss!
+
+### Why Fire Icons?
+
+- **🎯 Instant Visibility** - Fire gradient (red → orange → yellow) catches your eye immediately
+- **🔥 Psychological Impact** - Fire represents urgency and action, perfect for TODOs
+- **🎨 Beautiful Design** - Smooth gradient that looks professional in any theme
+- **📍 Consistent Branding** - Fire icons everywhere: tree view, gutter, and tag groups
+
+### How It Works
+
+1. **Tag with "TODO"** - Any bookmark tagged with "TODO" automatically gets fire icons
+2. **Dedicated Section** - All TODO bookmarks appear in the "🔥 TODO Bookmarks" panel
+3. **Quick Access** - Right-click in editor → "Add TODO Bookmark" for instant creation
+4. **Smart Organization** - TODOs are numbered separately (A1, A2, A3...) with fire icons
+
+### Visual Examples
+
+```
+🔥 TODO BOOKMARKS
+└── 🔥 TODO (3)
+    ├── 🔥 A1. Fix authentication bug
+    ├── 🔥 A2. Add input validation  
+    └── 🔥 A3. Implement rate limiting
+
+📖 BOOKMARKS
+├── 📁 important (2)
+│   ├── 📖 B1. Database connection
+│   └── 📖 B2. Query builder
+└── 📁 api (2)
+    ├── 📖 C1. API endpoints
+    └── 📖 C2. Error handler
+```
+
+---
+
 ## 🚀 Getting Started
 
 ### ⚡ Installation (30 seconds)
+
+#### VS Code / Cursor / Windsurf / Kiro
 
 1. **Open Extensions** → Press `Ctrl+Shift+X` (Win/Linux) or `Cmd+Shift+X` (Mac)
 2. **Search** → Type "Bookmark Manager Lite"
@@ -103,9 +156,19 @@ Works seamlessly across **all VS Code-based editors**:
 
 **Alternative:**
 
-- 🌐 [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=bookmark-manager-lite)
+- 🌐 [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=PutraAdiJaya.bookmark-manager-lite)
 - 💻 Command: `ext install PutraAdiJaya.bookmark-manager-lite`
-- 🔄 Works on: VS Code, Cursor, Windsurf, Kiro, Qoder & all variants
+
+#### VSCodium / Gitpod / Eclipse Theia
+
+1. **Open Extensions** → Press `Ctrl+Shift+X`
+2. **Search** → Type "Bookmark Manager Lite"
+3. **Install** → Click Install button
+
+**Alternative:**
+
+- 🌐 [Open VSX Registry](https://open-vsx.org/extension/PutraAdiJaya/bookmark-manager-lite)
+- 💻 Works on: VSCodium, Gitpod, Eclipse Theia, Code-Server & all Open VSX-compatible editors
 
 ### Basic Usage
 
@@ -128,9 +191,13 @@ Works seamlessly across **all VS Code-based editors**:
    - No changes are made to your actual code - it's purely visual
 
 3. **Navigate to Bookmarks**
-   - Open the **Bookmark Putra** panel in the Explorer view.
+   - Open the **TODO Bookmarks** or **Bookmarks** panel in the Explorer view.
+   - TODO-tagged bookmarks appear in the dedicated "TODO Bookmarks" section
+   - All other bookmarks appear in the "Bookmarks" section
    - Click on any bookmark to jump directly to that location.
    - Use the "**Bookmark.Putra: Open Bookmark**" command for quick access via the Command Palette.
+   - Click the **+** icon in the tree view toolbar to quickly toggle bookmarks on/off for the current line
+   - Right-click in the editor and select "**Add TODO Bookmark**" for quick TODO creation
 
 4. **Organize with Custom Tags & Groups**
    - Create your own custom tags when adding bookmarks (e.g., "auth", "api", "bug-fix", "todo")
@@ -142,6 +209,13 @@ Works seamlessly across **all VS Code-based editors**:
    - Example sidebar structure with custom tags:
 
      ```
+     📂 TODO BOOKMARKS
+     └── 📁 todo (4)
+         ├── A1. 📖 Refactor This Function
+         ├── A2. 📖 Add Error Handling
+         ├── A3. 📖 Optimize Query
+         └── A4. 📖 Update Documentation
+     
      📂 BOOKMARKS
      ├── 📁 auth (3)
      │   ├── A1. 📖 User Login Function
@@ -150,13 +224,8 @@ Works seamlessly across **all VS Code-based editors**:
      ├── 🐞 bug-fix (2)
      │   ├── B1. 🐞 Memory Leak Fix
      │   └── B2. 📖 Null Pointer Check
-     ├── 📁 todo (4)
-     │   ├── C1. 📖 Refactor This Function
-     │   ├── C2. 📖 Add Error Handling
-     │   ├── C3. 📖 Optimize Query
-     │   └── C4. 📖 Update Documentation
      └── 📁 untagged (1)
-         └── D1. 📖 Main Entry Point
+         └── C1. 📖 Main Entry Point
      ```
 
 ## 📋 Commands
@@ -164,15 +233,18 @@ Works seamlessly across **all VS Code-based editors**:
 | Command | Description | Default Keybinding |
 |------------------------------------------|----------------------------------------------|--------------------|
 | `Bookmark.Putra: Add Bookmark`           | Add a bookmark at the current cursor position. | `Ctrl+Shift+B`     |
+| `Bookmark.Putra: Add TODO Bookmark`      | **NEW** - Quickly add a TODO bookmark (auto-tagged). | -                  |
 | `Bookmark.Putra: Add Bookmark with Tags` | Add a bookmark with custom tags for organization. | `Ctrl+Shift+T`     |
+| `Bookmark.Putra: Toggle Bookmark on Current Line` | **NEW** - Quickly add or remove bookmark on current line with one click. | -                  |
 | `Bookmark.Putra: Open Bookmark`          | Open and navigate to a bookmark from your list. | -                  |
 | `Bookmark.Putra: Remove Bookmark`        | Remove the selected bookmark.                  | -                  |
+| `Bookmark.Putra: Edit Bookmark Details`  | **NEW** - Edit bookmark title and/or description. | -                  |
 | `Bookmark.Putra: Edit Bookmark Tags`     | Modify tags for existing bookmarks.            | -                  |
 | `Bookmark.Putra: Clear All Bookmarks`    | Remove all bookmarks from current workspace.   | -                  |
 | `Bookmark.Putra: Collapse All Groups`    | Collapse all tag groups in the sidebar.      | -                  |
 | `Bookmark.Putra: Expand All Groups`      | Expand all tag groups in the sidebar.        | -                  |
 | `Bookmark.Putra: Search Bookmarks`       | Search bookmarks by substring matching title, description, file or tags. | `Ctrl+Shift+F`     |
-| `Bookmark.Putra: Search Tree View`       | Search bookmarks directly in the explorer view. | -                  |
+| `Bookmark.Putra: Search Tree View`       | Search bookmarks directly in the explorer view (with icon). | -                  |
 | `Bookmark.Putra: Export Bookmarks`       | Export all bookmarks to a JSON file.         | -                  |
 | `Bookmark.Putra: Import Bookmarks`       | Import bookmarks from a JSON file.           | -                  |
 | `Bookmark.Putra: Validate Bookmarks`     | Check if bookmarked files still exist.       | -                  |
@@ -300,6 +372,33 @@ This extension is designed to be simple and lightweight, with no configuration r
 None at this time.
 
 ## Release Notes
+
+### 1.0.6
+
+Visual enhancements and demo content:
+
+- 🔥 **Fire Icons for TODO** - All TODO bookmarks now use distinctive fire gradient icons (red-orange-yellow)
+- 🎨 **Consistent Visual Design** - Fire icons in tree view, gutter, and tag groups
+- 📁 **Demo Files Included** - Complete demo project with 20 sample bookmarks showcasing all features
+- 🎯 **Better TODO Recognition** - Instant visual distinction between TODO and regular bookmarks
+
+### 1.0.5
+
+Enhanced organization and productivity features:
+
+- Separate TODO Bookmarks section for better task management
+- Quick toggle button to add/remove bookmarks on current line
+- Icon-based search button for improved visual clarity
+- Split tree view for organized bookmark management
+
+### 1.0.0
+
+Production-ready release with professional features:
+
+- Multi-color icons with 26 unique gradient colors
+- Smart tag-based numbering system
+- High-performance optimization for 1000+ bookmarks
+- Complete bookmark management suite
 
 ### 0.0.1
 

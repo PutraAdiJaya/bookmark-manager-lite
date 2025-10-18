@@ -2,12 +2,14 @@ import * as vscode from "vscode";
 import { StorageManager } from "./storage/StorageManager";
 import { BookmarkService } from "./services/BookmarkService";
 import { BookmarkTreeProvider } from "./views/BookmarkTreeProvider";
+import { TodoBookmarkTreeProvider } from "./views/TodoBookmarkTreeProvider";
 import { DecorationManager } from "./decorations/DecorationManager";
 import { addBookmarkCommand } from "./commands/addBookmark";
 import { addBookmarkWithTagsCommand } from "./commands/addBookmarkWithTags";
 import { openBookmarkCommand } from "./commands/openBookmark";
 import { removeBookmarkCommand } from "./commands/removeBookmark";
 import { editBookmarkTagsCommand } from "./commands/editBookmarkTags";
+import { editBookmarkDetailsCommand } from "./commands/editBookmarkDetails";
 import { clearAllBookmarksCommand } from "./commands/clearAllBookmarks";
 import {
   collapseAllCommand,
@@ -19,6 +21,8 @@ import { importBookmarksCommand } from "./commands/importBookmarks";
 import { validateBookmarksCommand } from "./commands/validateBookmarks";
 import { showStatisticsCommand } from "./commands/showStatistics";
 import { searchTreeViewCommand } from "./commands/searchTreeView";
+import { toggleBookmarkCommand } from "./commands/toggleBookmark";
+import { addTodoBookmarkCommand } from "./commands/addTodoBookmark";
 
 export async function activate(context: vscode.ExtensionContext) {
   // Get workspace root
@@ -39,10 +43,15 @@ export async function activate(context: vscode.ExtensionContext) {
   // Initialize bookmark service (load bookmarks from storage)
   await bookmarkService.initialize();
 
-  // Register TreeView Provider
+  // Register TreeView Providers
   const treeProvider = new BookmarkTreeProvider(bookmarkService);
   context.subscriptions.push(
     vscode.window.registerTreeDataProvider("bookmarkExplorer", treeProvider)
+  );
+
+  const todoTreeProvider = new TodoBookmarkTreeProvider(bookmarkService);
+  context.subscriptions.push(
+    vscode.window.registerTreeDataProvider("bookmarkTodoExplorer", todoTreeProvider)
   );
 
   // Initialize DecorationManager
@@ -81,6 +90,12 @@ export async function activate(context: vscode.ExtensionContext) {
   );
 
   context.subscriptions.push(
+    vscode.commands.registerCommand("bookmarkLite.editDetails", (bookmark) =>
+      editBookmarkDetailsCommand(bookmarkService, bookmark)
+    )
+  );
+
+  context.subscriptions.push(
     vscode.commands.registerCommand("bookmarkLite.clearAll", () =>
       clearAllBookmarksCommand(bookmarkService)
     )
@@ -105,10 +120,36 @@ export async function activate(context: vscode.ExtensionContext) {
     )
   );
 
-  // Register search tree view command
+  // Register search tree view commands
   context.subscriptions.push(
     vscode.commands.registerCommand("bookmarkLite.searchTreeView", () =>
-      searchTreeViewCommand(treeProvider)
+      searchTreeViewCommand(treeProvider, null)
+    )
+  );
+
+  context.subscriptions.push(
+    vscode.commands.registerCommand("bookmarkLite.searchTodoTreeView", () =>
+      searchTreeViewCommand(null, todoTreeProvider)
+    )
+  );
+
+  // Register toggle bookmark commands
+  context.subscriptions.push(
+    vscode.commands.registerCommand("bookmarkLite.toggleBookmark", () =>
+      toggleBookmarkCommand(bookmarkService, 'bookmarkExplorer')
+    )
+  );
+
+  context.subscriptions.push(
+    vscode.commands.registerCommand("bookmarkLite.toggleTodoBookmark", () =>
+      toggleBookmarkCommand(bookmarkService, 'bookmarkTodoExplorer')
+    )
+  );
+
+  // Register add TODO bookmark command
+  context.subscriptions.push(
+    vscode.commands.registerCommand("bookmarkLite.addTodo", () =>
+      addTodoBookmarkCommand(bookmarkService)
     )
   );
 
