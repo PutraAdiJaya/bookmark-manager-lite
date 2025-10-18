@@ -1,4 +1,4 @@
-# � Boookmark Manager Lite - Now with Fire TODO Icons!
+# � Boookmark Manager Lite - Now with Fire TODO Icons
 
 <div align="center">
 
