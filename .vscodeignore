@@ -13,3 +13,11 @@ vsc-extension-quickstart.md
 **/.vscode-test.*
 .kiro/**
 .specstory/**
+.putra/**
+screenshots/**
+*.png
+!resources/*.png
+*.md
+!README.md
+!CHANGELOG.md
+!LICENSE.txt

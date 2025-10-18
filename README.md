@@ -19,6 +19,8 @@
 
 Transform your code navigation experience with a **professional-grade bookmark system** that combines beautiful visuals with powerful organization. Now featuring **🔥 Fire Icons for TODO items** - making your tasks impossible to miss!
 
+![alt text](image.png)
+
 ### 💡 Perfect For
 
 - � **LTODO Management** - Track tasks with eye-catching fire icons that stand out

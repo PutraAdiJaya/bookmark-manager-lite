@@ -4,6 +4,16 @@ All notable changes to the "Bookmark Manager Lite" extension will be documented 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.0.7] - 2025-10-19
+
+### 📦 Package Optimization
+
+- Excluded `.putra/` folder from extension package (user data folder, created automatically)
+- Excluded unnecessary markdown documentation files from package
+- Excluded `image.png` screenshot from package
+- Reduced package size for faster installation
+- Demo folder now properly included for user reference
+
 ## [1.0.6] - 2025-10-19
 
 ### 🔥 Visual Enhancements
