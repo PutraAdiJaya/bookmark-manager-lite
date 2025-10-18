@@ -1,4 +1,4 @@
-# � Boookmark Manager Lite - Now with Fire TODO Icons
+# 🔖Boookmark Manager Lite - Now with Fire TODO Icons
 
 <div align="center">
 
@@ -9,7 +9,7 @@
 
 ### 🎨 Professional Bookmark Manager with Multi-Color Icons, Smart Numbering & Fire TODO Tracking
 
-**🔥 Fire TODO Icons** • **✨ 26 Unique Colors** • **� Intelligent Numobering** • **🚀 High Performance** • **🎯 Zero Configuration**
+**🔥 Fire TODO Icons** • **✨ 26 Unique Colors** • **🔥 Intelligent Numobering** • **🚀 High Performance** • **🎯 Zero Configuration**
 
 </div>
 
@@ -19,14 +19,16 @@
 
 Transform your code navigation experience with a **professional-grade bookmark system** that combines beautiful visuals with powerful organization. Now featuring **🔥 Fire Icons for TODO items** - making your tasks impossible to miss!
 
-<img src="https://raw.githubusercontent.com/PutraAdiJaya/bookmark-manager-lite/master/screenshots/preview.png" alt="Preview" width="600"/>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/PutraAdiJaya/bookmark-manager-lite/master/screenshots/preview.png" alt="Preview" width="100%"/>
+</p>
 
 ### 💡 Perfect For
 
-- � **LTODO Management** - Track tasks with eye-catching fire icons that stand out
+- 🔥 **LTODO Management** - Track tasks with eye-catching fire icons that stand out
 - 🔍 **Large Codebases** - Navigate thousands of lines effortlessly
 - 🏗️ **Complex Projects** - Organize code by features, bugs, or priorities
-- � **Teaem Collaboration** - Share bookmark configurations via Git
+- 🔥 **Teaem Collaboration** - Share bookmark configurations via Git
 - 📚 **Code Reviews** - Mark important sections for review
 - 🎓 **Learning** - Bookmark key concepts while studying code
 
@@ -107,7 +109,7 @@ Works seamlessly across **all VS Code-based editors**:
 - **Search in Tree** - Filter bookmarks directly in sidebar
 - **Command Palette** - Full integration with VS Code commands
 
-## � Fire TODSO Icons - What's New?
+## 🔥 Fire TODSO Icons - What's New?
 
 The latest version introduces **Fire TODO Icons** - a game-changing visual enhancement that makes your TODO items impossible to miss!
 
