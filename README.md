@@ -19,7 +19,7 @@
 
 Transform your code navigation experience with a **professional-grade bookmark system** that combines beautiful visuals with powerful organization. Now featuring **🔥 Fire Icons for TODO items** - making your tasks impossible to miss!
 
-![alt text]( screenshots\preview.png)
+<img src="https://raw.githubusercontent.com/PutraAdiJaya/bookmark-manager-lite/master/screenshots/preview.png" alt="Preview" width="600"/>
 
 ### 💡 Perfect For
 
